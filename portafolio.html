@@ -1,17 +1,98 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Profesional</title>
+    <link rel="stylesheet" href="estilos/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      .font-montserrat { font-family: 'Montserrat', sans-serif; }
+      /* Tailwind custom utilities para animación de fondo */
+      @layer utilities {
+        .bg-gradient-animated {
+          background: linear-gradient(131deg,#060657,#0976be,#04675d,#000000);
+          background-size: 240% 240%;
+        }
+        .animate-gradient-flow {
+          animation: gradient-animation 32s ease infinite;
+        }
+        @keyframes gradient-animation {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      }
+    </style>
 </head>
-<body>
-    <h1>Portafolio</h1>
-    <p>Aquí puedes mostrar tus proyectos, trabajos o logros destacados.</p>
-    <nav>
-        <a href="index.html">Inicio</a> |
-        <a href="sobre-mi.html">Sobre Mí</a> |
-        <a href="portafolio.html">Portafolio</a>
-    </nav>
+
+<body class="min-h-screen bg-gradient-animated animate-gradient-flow w-full h-screen font-sans text-white">
+     <div class="flex flex-col items-center text-center h-5 justify-center gap-6">
+         <nav class="mt-8">
+        <a href="index.html" class="px-4 py-1 border border-white rounded-full bg-transparent text-white transition-colors duration-200 hover:bg-white hover:text-blue-900 mr-2">Inicio</a>
+        <a href="sobre-mi.html" class="px-4 py-1 border border-white rounded-full bg-transparent text-white transition-colors duration-200 hover:bg-white hover:text-blue-900">Sobre mi</a>
+      </nav>
+     </div>
+  <div class="container mx-auto py-12 px-4">
+    <h1 class="text-4xl font-bold mb-8 text-center">Mis Proyectos</h1>
+    <div class="flex justify-center mb-8">
+      <select id="filtro-tipo" class="px-4 py-2 rounded-lg border border-white bg-transparent text-white focus:outline-none">
+        <option value="todos">Todos los tipos</option>
+        <option value="Web App">Web App</option>
+        <option value="API">API</option>
+        <option value="Landing Page">Landing Page</option>
+      </select>
+    </div>
+    <div id="proyectos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Tarjeta Proyecto 1 -->
+      <a href="proyecto1.html" data-tipo="Web App" class="proyecto block bg-white/10 border border-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform cursor-pointer">
+        <img src="./estilos/proyecto1.jpg" alt="Proyecto 1" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-2xl font-bold mb-2">Proyecto 1</h2>
+          <p class="text-sm mb-1">Tecnologías: HTML, CSS, JavaScript</p>
+          <span class="inline-block bg-blue-700/80 text-white text-xs px-3 py-1 rounded-full">Web App</span>
+        </div>
+      </a>
+      <!-- Tarjeta Proyecto 2 -->
+      <a href="proyecto2.html" data-tipo="API" class="proyecto block bg-white/10 border border-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform cursor-pointer">
+        <img src="./estilos/proyecto2.jpg" alt="Proyecto 2" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-2xl font-bold mb-2">Proyecto 2</h2>
+          <p class="text-sm mb-1">Tecnologías: Java, Spring Boot</p>
+          <span class="inline-block bg-green-700/80 text-white text-xs px-3 py-1 rounded-full">API</span>
+        </div>
+      </a>
+      <!-- Tarjeta Proyecto 3 -->
+      <a href="proyecto3.html" data-tipo="Landing Page" class="proyecto block bg-white/10 border border-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform cursor-pointer">
+        <img src="./estilos/proyecto3.jpg" alt="Proyecto 3" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-2xl font-bold mb-2">Proyecto 3</h2>
+          <p class="text-sm mb-1">Tecnologías: Tailwind CSS, JS</p>
+          <span class="inline-block bg-purple-700/80 text-white text-xs px-3 py-1 rounded-full">Landing Page</span>
+        </div>
+      </a>
+      <!-- Puedes duplicar y personalizar más tarjetas -->
+    </div>
+  </div>
+  <script>
+    document.getElementById('filtro-tipo').addEventListener('change', function() {
+      const tipo = this.value;
+      document.querySelectorAll('.proyecto').forEach(card => {
+        if (tipo === 'todos' || card.getAttribute('data-tipo') === tipo) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+    
 </body>
 </html>

@@ -8,21 +8,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
       .font-montserrat { font-family: 'Montserrat', sans-serif; }
+      /* Tailwind custom utilities para animación de fondo */
+      @layer utilities {
+        .bg-gradient-animated {
+          background: linear-gradient(131deg,#060657,#0976be,#04675d,#000000);
+          background-size: 240% 240%;
+        }
+        .animate-gradient-flow {
+          animation: gradient-animation 32s ease infinite;
+        }
+        @keyframes gradient-animation {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      }
     </style>
 </head>
-<body class="min-h-screen bg-[radial-gradient(circle_at_50%_50%,_#3a8dde_0%,_#0a2342_60%,_#000_100%)] font-sans text-white">
+<body class="h-full min-h-screen bg-gradient-animated animate-gradient-flow w-full  font-sans text-white">
     <div class="flex flex-col items-center text-center min-h-screen justify-center gap-6">
         <nav class="mt-8">
-        <a href="index.html" class="hover:underline">Inicio</a> |
-        <a href="sobre-mi.html" class="hover:underline">Sobre Mí</a> |
-        <a href="portafolio.html" class="hover:underline">Portafolio</a>
+        <a href="index.html" class="px-4 py-1 border border-white rounded-full bg-transparent text-white transition-colors duration-200 hover:bg-white hover:text-blue-900 mr-2">Inicio</a>
+        <a href="portafolio.html" class="px-4 py-1 border border-white rounded-full bg-transparent text-white transition-colors duration-200 hover:bg-white hover:text-blue-900">Portafolio</a>
       </nav>
       <div class="">
       <div class="my-6 w-full flex justify-center">
         <img src="./estilos/foto.jpg" alt="Foto de perfil" class="w-80 h-96 rounded-full object-cover" />
       </div>
-      <h1 class="text-4xl mt-8">Hola, mi nombre es Marverick Argueta C.</h1>
-      <div class="flex justify-center gap-4 mb-6 px-8 py-2 border-4 border-white rounded-full w-max mx-auto my-1 bg-cyan-400/80 mt-4" id="social-links">
+      <h1 class="text-4xl mt-8">Marverick Argueta</h1>
+      <h2 class="text-2xl mt-2">Desarrollador Web</h2>
+      <div class="flex justify-center gap-2 mb-2 px-8 py-2 border-4 border-white rounded-full w-max mx-auto my-1  mt-4" id="social-links">
         <a href="https://www.instagram.com/marverickargueta?igsh=MXg1eXZ6NzR5bGpobA==" target="_blank" class="bg-gradient-to-tr from-pink-500 to-yellow-400 rounded-full w-10 h-10 flex items-center justify-center hover:scale-110 transition-transform">
           <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5A4.25 4.25 0 0 0 20.5 16.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 2.25a6.25 6.25 0 1 1 0 12.5 6.25 6.25 0 0 1 0-12.5zm0 1.5a4.75 4.75 0 1 0 0 9.5 4.75 4.75 0 0 0 0-9.5zm5.25 1.25a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
         </a>
@@ -35,9 +56,62 @@
         </div>
       </div>
       </div>
-      <p class="max-w-2xl break-keep mx-auto text-center">Soy MARVERICK, estudiante de Ingeniería en Sistemas con 22 años de energía, curiosidad y pasión por la tecnología. Aquí presento proyectos que fusionan funcionalidad y diseño, usando herramientas como HTML5, CSS, Tailwind, Java y JavaScript. Cada creación refleja mi crecimiento, aprendizaje y dedicación al desarrollo web.<br>Explora libremente. Cada línea de código cuenta mi historia.</p>
+      <p class="max-w-2xl break-keep mx-auto text-center lg:-mt-10"></p>
       
-      </nav>
+    
     </div>
+    <div id="datos-personales">
+  <div class="w-full flex justify-center mb-8">
+    <div class="bg-white/10 border border-white rounded-xl p-6 w-full md:w-2/3 lg:w-1/2 text-white text-left shadow-lg mt-20">
+      <h3 class="text-2xl font-bold mb-2">Presentación</h3>
+      <p>Soy un joven con hambre de conocimiento y en busqueda de nuevos retos para mi carrera profesional. Me considero una persona que se adapta al entorno y dificultades con un gran razonamiento lógico y critico que ayuda a buscar soluciones creativas a problemas del día a día</p>
+    </div>
+  </div>
+  <div class="flex flex-col md:flex-row gap-4 justify-center items-start mt-8">
+    <!-- Tarjeta 1: Valores -->
+    <div class="bg-white/10 border border-white rounded-xl p-6 w-full md:w-96 cursor-pointer transition-transform hover:scale-105" onclick="toggleCard('valores')">
+      <h3 class="text-xl font-bold mb-2">Valores que me describen</h3>
+      <div id="card-valores" class="hidden text-white text-left">
+        <ol class="list-decimal list-inside">
+          <li>Responsabilidad</li>
+          <li>Trabajo en equipo</li>
+          <li>Creatividad</li>
+          <li>Compromiso</li>
+        </ol>
+      </div>
+    </div>
+    <!-- Tarjeta 2: Formación Académica -->
+    <div class="bg-white/10 border border-white rounded-xl p-6 w-full md:w-72 cursor-pointer transition-transform hover:scale-105" onclick="toggleCard('formacion')">
+      <h3 class="text-xl font-bold mb-2">Formación Académica</h3>
+      <div id="card-formacion" class="hidden text-white text-left">
+        <ul class="list-disc list-inside">
+          <li>Ingeniería en Sistemas Computacionales Universidad Mariano Gálvez (Huehuetenango) 2022 - Actualidad</li>
+          <li>Perito en Electronica y Dispositivos Digitales (Colegio Cambridge Huehuetenango) 2019-2021</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Tarjeta 3: Tecnologías Aprendidas -->
+    <div class="bg-white/10 border border-white rounded-xl p-6 w-full m md:w-72 cursor-pointer transition-transform hover:scale-105" onclick="toggleCard('tecnologias')">
+      <h3 class="text-xl font-bold mb-2">Tecnologías Aprendidas</h3>
+      <div id="card-tecnologias" class="hidden text-white text-left">
+        <ul class="list-disc list-inside">
+          <li>HTML5, CSS3, Tailwind CSS</li>
+          <li>JavaScript</li>
+          <li>Java</li>
+          <li>python</li>
+          <li>Git & GitHub</li>
+          <li>SQL & NOSQL</li>
+          <li>MongoDB, MYSQL</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="main.js"></script>
+    </div>
+
+    <footer class="mt-8 text-center text-gray-400">
+      <p>&copy; 2025 Marverick Argueta. Todos los derechos reservados.</p>
+      <p>Desarrollado con pasión y dedicación.</p>
 </body>
+
 </html>
