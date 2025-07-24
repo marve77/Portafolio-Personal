@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personajes Rick y Morty</title>
+    <link rel="stylesheet" href="../estilos/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      .font-montserrat { font-family: 'Montserrat', sans-serif; }
+      @layer utilities {
+        .bg-gradient-animated {
+          background: linear-gradient(131deg,#060657,#0976be,#04675d,#000000);
+          background-size: 240% 240%;
+        }
+        .animate-gradient-flow {
+          animation: gradient-animation 32s ease infinite;
+        }
+        @keyframes gradient-animation {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      }
+    </style>
+</head>
+
+<body class="h-full min-h-screen bg-gradient-animated animate-gradient-flow w-full font-sans text-white">
+    <div class="flex flex-col items-center justify-center min-h-screen">
+      <h1 class="text-4xl font-bold mb-8 font-montserrat text-center">Personajes Rick y Morty</h1>
+      <div class="w-full max-w-xl flex flex-col items-center px-2 md:px-0">
+        <div class="relative w-full overflow-hidden">
+          <div id="carousel" class="flex transition-transform duration-700 ease-in-out" style="width: 100%; min-width:0;">
+            <img src="../estilos/rick t morty/foto 5.png" class="carousel-img w-full h-64 md:h-96 object-cover rounded-xl mx-2" alt="Personaje 1">
+            <img src="../estilos/rick t morty/foto 6.png" class="carousel-img w-full h-64 md:h-96 object-cover rounded-xl mx-2" alt="Personaje 2">
+            <img src="../estilos/rick t morty/foto 7.png" class="carousel-img w-full h-64 md:h-96 object-cover rounded-xl mx-2" alt="Personaje 3">
+          </div>
+    <!-- Modal para mostrar imagen completa -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 hidden px-2">
+      <span id="closeModal" class="absolute top-6 right-8 text-4xl text-white cursor-pointer font-bold">&times;</span>
+      <img id="modalImg" src="" class="max-w-full max-h-full rounded-lg shadow-lg" alt="Imagen ampliada">
+    </div>
+          <div class="flex justify-center mt-4">
+            <button id="prev" class="bg-blue-700 hover:bg-blue-900 text-white px-4 py-2 rounded-l">&#8592;</button>
+            <button id="next" class="bg-blue-700 hover:bg-blue-900 text-white px-4 py-2 rounded-r">&#8594;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="personajes.js"></script>
+</div>
+
+<!-- Tecnologías utilizadas -->
+<div class="w-full max-w-4xl mx-auto mb-12 p-4 md:p-6  bg-white/10 bg-opacity-40 border-2 border-white rounded-2xl shadow-lg">
+  <h2 class="text-2xl font-bold mb-4 text-center font-montserrat text-green-400">Tecnologías utilizadas</h2>
+  <ul class="list-disc pl-6 text-lg text-white">
+    <li>JavaScript</li>
+    <li>HTML5</li>
+    <li>TailwindCSS</li>
+    <li>API Rick and Morty</li>
+  </ul>
+</div>
+
+<!-- Sección de funcionalidades y problemas resueltos -->
+<div class="w-full max-w-4xl mx-auto mt-12 mb-8 p-4 md:p-6  bg-white/10 bg-opacity-40 border-2 border-white rounded-2xl flex flex-col md:flex-row justify-center items-start gap-8 shadow-lg">
+  <div class="w-full md:w-1/2">
+    <h2 class="text-2xl font-bold mb-4 text-center font-montserrat text-green-400">Funcionalidades</h2>
+    <ul class="list-disc pl-6 mb-6 text-lg">
+      <li>Visualización de personajes de la serie Rick y Morty.</li>
+      <li>Consulta de información relevante de cada personaje.</li>
+      <li>Interfaz interactiva y atractiva para el usuario.</li>
+      <li>Consumo de datos desde la API oficial.</li>
+      <li>Filtrado y búsqueda de personajes.</li>
+    </ul>
+  </div>
+  <div class="w-full md:w-1/2">
+    <h2 class="text-2xl font-bold mb-4 text-center font-montserrat text-green-400">Problemas</h2>
+    <ul class="list-disc pl-6 text-lg">
+      <li>Facilita el acceso a información de personajes sin navegar por la web.</li>
+      <li>Reduce el tiempo de búsqueda y consulta.</li>
+      <li>Presenta datos de manera visual y ordenada.</li>
+      <li>Permite explorar y descubrir nuevos personajes fácilmente.</li>
+      <li>Optimiza la experiencia del usuario en dispositivos móviles y escritorio.</li>
+    </ul>
+  </div>
+</div>
+<!-- Botón para volver al portafolio -->
+<div class="w-full flex justify-center mb-12 px-2">
+  <a href="../portafolio.html" class="bg-blue-700 hover:bg-blue-900 text-white font-bold py-3 px-8 rounded-xl shadow-lg transition-colors duration-300">Volver al portafolio</a>
+</div>
+</body>
+
+</html>

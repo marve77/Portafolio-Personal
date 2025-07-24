@@ -5,15 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio Profesional</title>
     <link rel="stylesheet" href="estilos/output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      .font-montserrat { font-family: 'Montserrat', sans-serif; }
+      /* Tailwind custom utilities para animación de fondo */
+      @layer utilities {
+        .bg-gradient-animated {
+          background: linear-gradient(131deg,#060657,#0976be,#04675d,#000000);
+          background-size: 240% 240%;
+        }
+        .animate-gradient-flow {
+          animation: gradient-animation 32s ease infinite;
+        }
+        @keyframes gradient-animation {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      }
+    </style>
 </head>
-<body>
-     <h1 class="text-5xl">Inicio</h1>
-     
-    <p>Soy MARVERICK, estudiante de Ingeniería en Sistemas con 22 años de energía, curiosidad y pasión por la tecnología. Aquí presento proyectos que fusionan funcionalidad y diseño, usando herramientas como HTML5, CSS, Tailwind, Java y JavaScript. Cada creación refleja mi crecimiento, aprendizaje y dedicación al desarrollo web.
-    Explora libremente. Cada línea de código cuenta mi historia.</p>
-    <nav>
-        <a href="index.html">Inicio</a> |
-        <a href="sobre-mi.html">Sobre Mí</a> |
-        <a href="portafolio.html">Portafolio</a>
+<body class="h-full min-h-screen bg-gradient-animated animate-gradient-flow w-full  font-sans text-white">
+    <div class="flex flex-col items-center text-center h-20 justify-center gap-6 mt-10">
+    <h1 class="text-5xl">Inicio</h1>
+     <nav class="mt-8">
+        <a href="sobre-mi.html" class="px-4 py-1 border border-white rounded-full bg-transparent text-white transition-colors duration-200 hover:bg-white hover:text-blue-900 mr-2">Sobre mi</a>
+        <a href="portafolio.html" class="px-4 py-1 border border-white rounded-full bg-transparent text-white transition-colors duration-200 hover:bg-white hover:text-blue-900">Portafolio</a>
+      </nav>
+    </div>
+    <div class="w-full max-w-2xl mx-auto mt-10 p-6 bg-white/10 bg-opacity-40 border-2 border-white rounded-2xl shadow-lg flex flex-col items-center text-center">
+      <h2 class="text-3xl font-bold mb-4 text-green-400 font-montserrat">¡Bienvenido a mi portafolio profesional!</h2>
+      <p class="text-lg text-white mb-2">Aquí encontrarás una muestra de mis proyectos, habilidades y experiencia en desarrollo de software y tecnología.</p>
+      <p class="text-lg text-white">Explora cada sección para conocer más sobre mi trabajo y cómo puedo aportar valor a tu equipo o proyecto. ¡Gracias por visitar!</p>
+      <!-- Slider de tecnologías -->
+      <div class="w-full flex justify-center my-6">
+        <div class="overflow-x-auto whitespace-nowrap py-2 px-2 rounded-xl border border-white bg-white/10 flex items-center gap-6 shadow-lg">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="h-12 w-12 inline-block" title="JavaScript" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="h-12 w-12 inline-block" title="Python" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" class="h-12 w-12 inline-block" title="HTML5" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" class="h-12 w-12 inline-block" title="CSS3" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="h-12 w-12 inline-block" title="MySQL" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" class="h-12 w-12 inline-block" title="MongoDB" />
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="h-12 w-12 inline-block" title="Java" />
+        </div>
+      </div>
+      <!-- Estadísticas rápidas -->
+      <div class="w-full flex flex-col md:flex-row justify-center items-center gap-6 mt-4">
+        <div class="flex flex-col items-center">
+          <span class="text-3xl font-bold text-green-400">+4</span>
+          <span class="text-white">Años de experiencia</span>
+        </div>
+        <div class="flex flex-col items-center">
+          <span id="num-proyectos" class="text-3xl font-bold text-green-400">+4</span>
+          <span class="text-white">Proyectos realizados</span>
+        </div>
+</div>
+<script src="index.js"></script>
+        <div class="flex flex-col items-center">
+          <span class="text-3xl font-bold text-green-400">+7</span>
+          <span class="text-white">Tecnologías dominadas</span>
+        </div>
+      </div>
+    </div>
 </body>
 </html>

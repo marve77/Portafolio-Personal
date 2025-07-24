@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="estilos/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
+      
+      .proyecto:hover .proyecto-overlay {
+        opacity: 1;
+        pointer-events: auto;
+      }
       .font-montserrat { font-family: 'Montserrat', sans-serif; }
       /* Tailwind custom utilities para animación de fondo */
       @layer utilities {
@@ -32,7 +37,7 @@
     </style>
 </head>
 
-<body class="min-h-screen bg-gradient-animated animate-gradient-flow w-full h-screen font-sans text-white">
+<body class="min-h-screen bg-gradient-animated animate-gradient-flow w-full h-full font-sans text-white">
      <div class="flex flex-col items-center text-center h-5 justify-center gap-6">
          <nav class="mt-8">
         <a href="index.html" class="px-4 py-1 border border-white rounded-full bg-transparent text-white transition-colors duration-200 hover:bg-white hover:text-blue-900 mr-2">Inicio</a>
@@ -45,39 +50,64 @@
       <select id="filtro-tipo" class="px-4 py-2 rounded-lg border border-white bg-transparent text-white focus:outline-none">
         <option value="todos">Todos los tipos</option>
         <option value="Web App">Web App</option>
-        <option value="API">API</option>
+        <option value="Desktop App">Desktop App</option>
         <option value="Landing Page">Landing Page</option>
+        <option value="Python">Python</option>
       </select>
     </div>
     <div id="proyectos-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Tarjeta Proyecto 1 -->
-      <a href="proyecto1.html" data-tipo="Web App" class="proyecto block bg-white/10 border border-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform cursor-pointer">
-        <img src="./estilos/proyecto1.jpg" alt="Proyecto 1" class="w-full h-48 object-cover">
+      <!-- Tarjeta Proyecto Reconstructora Molina -->
+      <a href="./Proyectos/Gestion_ordenes_RM.html" data-tipo="Desktop App" class="proyecto relative block bg-white/10 border border-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform cursor-pointer">
+        <img src="./estilos/proyecto gestion de ordenes reconstructora molina/foto 1.png" alt="Proyecto 1" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h2 class="text-2xl font-bold mb-2">Proyecto 1</h2>
-          <p class="text-sm mb-1">Tecnologías: HTML, CSS, JavaScript</p>
-          <span class="inline-block bg-blue-700/80 text-white text-xs px-3 py-1 rounded-full">Web App</span>
+          <h2 class="text-2xl font-bold mb-2">Gestion de Ordenes Reconstructora Molina</h2>
+          <p class="text-sm mb-1">Tecnologías: Java</p>
+          <span class="inline-block bg-amber-400 text-black text-xs px-3 py-1 rounded-full">Desktop App</span>
+        </div>
+        <div class="proyecto-overlay">
+          <h3 class="text-lg font-bold mb-2">Más información</h3>
+          <p class="text-sm text-center">Sistema de gestión de órdenes para taller de reconstrucción de motores. Permite registrar, consultar y actualizar órdenes de trabajo.</p>
         </div>
       </a>
-      <!-- Tarjeta Proyecto 2 -->
-      <a href="proyecto2.html" data-tipo="API" class="proyecto block bg-white/10 border border-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform cursor-pointer">
-        <img src="./estilos/proyecto2.jpg" alt="Proyecto 2" class="w-full h-48 object-cover">
+      <!-- Tarjeta Proyecto Enfermedades Con IA -->
+      <a href="./Proyectos/Deteccion-de-enfermedades.html" data-tipo="Python" class="proyecto relative block bg-white/10 border border-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform cursor-pointer">
+        <img src="./estilos/deteccion de enfermedades/foto 4.png" alt="Proyecto 2" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h2 class="text-2xl font-bold mb-2">Proyecto 2</h2>
-          <p class="text-sm mb-1">Tecnologías: Java, Spring Boot</p>
-          <span class="inline-block bg-green-700/80 text-white text-xs px-3 py-1 rounded-full">API</span>
+          <h2 class="text-2xl font-bold mb-2">Deteccion de enfermedades de plnatas con IA</h2>
+          <p class="text-sm mb-1">Tecnologías: Python</p>
+          <span class="inline-block bg-yellow-400 text-blue-900 text-xs px-3 py-1 rounded-full">Python</span>
+        </div>
+        <div class="proyecto-overlay">
+          <h3 class="text-lg font-bold mb-2">Más información</h3>
+          <p class="text-sm text-center">App de IA para identificar enfermedades en plantas a partir de imágenes, usando modelos de Machine Learning entrenados en Python.</p>
         </div>
       </a>
-      <!-- Tarjeta Proyecto 3 -->
-      <a href="proyecto3.html" data-tipo="Landing Page" class="proyecto block bg-white/10 border border-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform cursor-pointer">
-        <img src="./estilos/proyecto3.jpg" alt="Proyecto 3" class="w-full h-48 object-cover">
+      <!-- Tarjeta Guia de personajes Rick and morty-->
+      <a href="./Proyectos/personajes.html" data-tipo="Web App" class="proyecto relative block bg-white/10 border border-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform cursor-pointer">
+        <img src="./estilos/rick t morty/foto 5.png" alt="Proyecto 3" class="w-full h-48 object-cover">
         <div class="p-4">
-          <h2 class="text-2xl font-bold mb-2">Proyecto 3</h2>
-          <p class="text-sm mb-1">Tecnologías: Tailwind CSS, JS</p>
-          <span class="inline-block bg-purple-700/80 text-white text-xs px-3 py-1 rounded-full">Landing Page</span>
+          <h2 class="text-2xl font-bold mb-2">Consumo de Api Guia de personajes Rick and Morty</h2>
+          <p class="text-sm mb-1">Tecnologías: Html5, TailwindCSS, JavaScript</p>
+          <span class="inline-block bg-purple-700/80 text-white text-xs px-3 py-1 rounded-full">Web App</span>
+        </div>
+        <div class="proyecto-overlay">
+          <h3 class="text-lg font-bold mb-2">Más información</h3>
+          <p class="text-sm text-center">Página web interactiva que consume recursos de una API pública para mostrar una guía de personajes de la serie Rick and Morty, permitiendo explorar información y detalles de cada personaje.</p>
         </div>
       </a>
-      <!-- Puedes duplicar y personalizar más tarjetas -->
+      <!-- Tarjeta Proyecto 4 -->
+       <a href="./Proyectos/api-java-mongo.html" data-tipo="Web App" class="proyecto relative block bg-white/10 border border-white rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform cursor-pointer">
+        <img src="" alt="Proyecto 3" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h2 class="text-2xl font-bold mb-2">Api para comunicacion con base de datos mediante http</h2>
+          <p class="text-sm mb-1">Tecnologías: JavaScript</p>
+          <span class="inline-block bg-yellow-300 text-black text-xs px-3 py-1 rounded-full">Web App</span>
+        </div>
+        <div class="proyecto-overlay">
+          <h3 class="text-lg font-bold mb-2">Más información</h3>
+          <p class="text-sm text-center">API desarrollada en JavaScript que permite la comunicación entre una aplicación web y una base de datos MongoDB a través de peticiones HTTP. Facilita operaciones CRUD (crear, leer, actualizar y eliminar) de datos de manera eficiente y segura.</p>
+        </div>
+      </a>
     </div>
   </div>
   <script>
